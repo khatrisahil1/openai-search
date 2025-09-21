@@ -4,8 +4,10 @@ import json
 import sys
 from openai import OpenAI, OpenAIError
 
+# Config
 MODEL = "gpt-4o-mini"
 
+# Main
 def main():
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
@@ -14,6 +16,7 @@ def main():
 
     client = OpenAI(api_key=api_key)
 
+    # Input
     try:
         phrase = input("Enter your search phrase: ").strip()
     except (KeyboardInterrupt, EOFError):
@@ -24,6 +27,7 @@ def main():
         print(json.dumps({"success": False, "error": "No input provided"}))
         return 2
 
+    # Call API
     try:
         resp = client.chat.completions.create(
             model=MODEL,
@@ -33,6 +37,7 @@ def main():
         ai_text = resp.choices[0].message.content
         tokens = resp.usage.total_tokens
 
+        # JSON output
         out = {
             "input_phrase": phrase,
             "ai_response": ai_text,

@@ -1,4 +1,4 @@
-#ChatUI deployed on streamlit
+# ChatUI deployed on streamlit
 from pathlib import Path
 import os, json, time
 from typing import List, Dict
@@ -34,11 +34,21 @@ def load_history() -> List[Dict]:
 def save_history(history: List[Dict]):
     save_json(HISTORY_FILE, history)
 
+# build_client: prefer Streamlit secrets (deployed), fallback to env var (local)
 def build_client() -> OpenAI:
-    api_key = os.getenv("OPENAI_API_KEY")
+    api_key = None
+    try:
+        api_key = st.secrets.get("OPENAI_API_KEY")
+    except Exception:
+        api_key = None
+
     if not api_key:
-        st.error("OPENAI_API_KEY not found.")
+        api_key = os.getenv("OPENAI_API_KEY")
+
+    if not api_key:
+        st.error("OPENAI_API_KEY not found. Add it to Streamlit Secrets or set the OPENAI_API_KEY environment variable.")
         st.stop()
+
     return OpenAI(api_key=api_key)
 
 st.set_page_config(page_title="Chat UI", layout="wide")
@@ -75,7 +85,7 @@ with st.sidebar:
     if st.button("Clear history"):
         save_history([]); st.rerun()
 
-st.title("💬 Chat UI")
+st.title("💬 Chat Bot")
 
 history = load_history()
 client = build_client()
