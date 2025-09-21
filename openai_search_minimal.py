@@ -4,7 +4,7 @@ import json
 import sys
 from openai import OpenAI, OpenAIError
 
-MODEL = "gpt-4o-mini"  # or gpt-4o / gpt-3.5-turbo depending on access by the gpt :)
+MODEL = "gpt-4o-mini"
 
 def main():
     api_key = os.getenv("OPENAI_API_KEY")
@@ -12,7 +12,6 @@ def main():
         print(json.dumps({"success": False, "error": "OPENAI_API_KEY not set"}))
         return 1
 
-    # Initialize client with API key
     client = OpenAI(api_key=api_key)
 
     try:
@@ -26,13 +25,11 @@ def main():
         return 2
 
     try:
-        # Call the chat completions endpoint
         resp = client.chat.completions.create(
             model=MODEL,
             messages=[{"role": "user", "content": phrase}],
         )
 
-        # Extract text + tokens
         ai_text = resp.choices[0].message.content
         tokens = resp.usage.total_tokens
 
