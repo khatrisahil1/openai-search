@@ -50,7 +50,15 @@ $env:OPENAI_API_KEY="sk-..."
 
 -----
 
-## 🚀 Usage
+## 🚀 Usage 
+
+### 🧭 Chat UI (recommended)
+
+A ChatBot-like UI built with **Streamlit**. It provides a friendly chat experience, keeps a running token total, stores a local history, and always exposes the final JSON .
+
+Click Here ---->  
+
+### Terminal 
 
 ### 1\. Minimal Script (Classic)
 
