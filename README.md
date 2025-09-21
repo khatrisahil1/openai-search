@@ -100,9 +100,6 @@ Enter your search phrase: What is 23 * 19?
 
 ```
 
-```
-
 **Output:**
 
 ![CLI Example](images/cli_example.png)
-```
