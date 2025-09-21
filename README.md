@@ -2,7 +2,7 @@
 # 🚀 OpenAI Search Scripts
 
 A small Python project demonstrating how to interact with the **OpenAI Chat Completions API**.
-It includes both a minimal internship deliverable and an enhanced CLI version with styling and token logging.
+It includes both a CLI version (minimal & enhanced) and a deployed App with token logging.
 
 ---
 
@@ -21,7 +21,7 @@ It includes both a minimal internship deliverable and an enhanced CLI version wi
 ## 📦 Requirements
 
 - Python 3.9+ (tested on 3.12)
-- Virtual environment recommended
+- Virtual environment recommended (CLI only)
 - OpenAI account + API key
 
 Install dependencies:
@@ -52,15 +52,24 @@ $env:OPENAI_API_KEY="sk-..."
 
 ## 🚀 Usage 
 
-### 🧭 Chat UI (recommended)
+### 1\. Chat UI (recommended)
 
-A ChatBot-like UI built with **Streamlit**. It provides a friendly chat experience, keeps a running token total, stores a local history, and always exposes the final JSON .
+A ChatBot-like UI built with **Streamlit**. It provides a friendly chat experience, keeps a running token total, stores a local history, and always exposes the final JSON. Best for a quick preview of the project.
+<br>
+<br>
+<br>
 
-Click Here ---->  
 
-### Terminal 
 
-### 1\. Minimal Script (Classic)
+<p align="center">
+  <a href="https://openai-search-bot.streamlit.app/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Launch%20Live-Open%20App-4c1?style=for-the-badge&logo=streamlit" alt="Open app">
+  </a>
+</p>
+
+<br>
+
+### 2\. Minimal Script (Classic)
 
 ```bash
 python openai_search_minimal.py
@@ -79,7 +88,7 @@ Enter your search phrase: Explain recursion in one sentence
 
 -----
 
-### 2\. CLI Script (Enhanced UI)
+### 3\. CLI Script (Enhanced UI)
 
 ```bash
 python openai_search_cli.py --phrase "What is 23 * 19?"
