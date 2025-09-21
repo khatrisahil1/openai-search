@@ -96,7 +96,8 @@ python openai_search_cli.py --phrase "What is 23 * 19?"
 **Input:**
 
 ```
-Enter your search phrase: Explain recursion in one sentence
+Enter your search phrase: "What is 23 * 19?"
+```
 ```
 
 **Output:**
