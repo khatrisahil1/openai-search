@@ -65,7 +65,8 @@ Enter your search phrase: Explain recursion in one sentence
 ```
 
 **Output:**
-images/classic_example.png
+
+![Minimal Script Example](images/classic_example.png)
 
 
 -----
@@ -82,5 +83,6 @@ Enter your search phrase: Explain recursion in one sentence
 ```
 
 **Output:**
-/images/cli_example.png
+
+![CLI Example](images/cli_example.png)
 ```
